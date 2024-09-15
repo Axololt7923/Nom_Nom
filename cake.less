@@ -1,35 +1,36 @@
-
-
 //////////////////////////////////////////// var
 
-@D:300px; // Control diameter
+@D: 300px; // Control diameter
 
 ///////////////////////////////////////////
 
 /* ============================================== POSITION
 */
 
-.cake{
-  position:absolute;
-  display:none;
- // top:30%; 
-  left:50%;
-  margin-left:-(@D/2);
-  width:@D; height:@D;
+.cake {
+  position: absolute;
+  display: none;
+  // top:30%; 
+  left: 50%;
+  margin-left: -(@D/2);
+  width: @D;
+  height: @D;
   z-index: 5;
 }
 
 /* ============================================== BASE
 */
 
-.cake:after{
-  
-  background:rgb(255, 255, 255);
-  border-radius:@D;
-  content:"";
-  position:absolute;
-  bottom:0; left:0;
-  width:@D; height:@D/50;
+.cake:after {
+
+  background: rgb(255, 255, 255);
+  border-radius: @D;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: @D;
+  height: @D/50;
 
 }
 
@@ -47,165 +48,185 @@
 /* ============================================== Candle
 */
 
-.velas{
-  background:rgba(255,255,255,1);
-  border-radius:100%;
-  position:absolute;
-  top:50%; left:50%;
-  margin-left:-(@D/2)/20;
-  margin-top:-(@D/2)/6;
-  width:@D/20; height:@D/6;
-  z-index:5;
+.velas {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -(@D/2)/20;
+  margin-top: -(@D/2)/6;
+  width: @D/20;
+  height: @D/6;
+  z-index: 5;
 }
 
 .velas:after,
-.velas:before{
-  background:rgba(255,0,0,0.4);
-  content:"";
-  position:absolute;
-  width:100%; height:@D/45;
+.velas:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: @D/45;
 }
 
-.velas:after{
-  top:25%; left:0;
+.velas:after {
+  top: 25%;
+  left: 0;
 }
 
-.velas:before{
-  top:45%; left:0;
+.velas:before {
+  top: 45%;
+  left: 0;
 }
 
 /* ============================================== Fire
 */
 
-.fuego{
-  display:none;
-  border-radius:100%;
-  box-shadow:0 0 40px 10px rgba(248,233,209,0.2);
-  position:absolute;
-  top:-12px; left:50%;
-  margin-left:-(@D/2)/15;
+.fuego {
+  display: none;
+  border-radius: 100%;
+  box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  margin-left: -(@D/2)/15;
   //margin-top:-(@D/2)/10;
-  width:@D/15; height:@D/8;
-  z-index:5;
+  width: @D/15;
+  height: @D/8;
+  z-index: 5;
 }
-.light{
-  width: 30 px;          
-  height: 30 px;       
-  background: radial-gradient(circle, rgba(255,255,0,0.8) 0%, rgba(255,255,0,0) 100%);
-  border-radius: 60%;  
-  position: absolute; 
-  left:50%;
-  transform: translate(-50%, -50%); 
+
+.light {
+  width: 30 px;
+  height: 30 px;
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.8) 0%, rgba(255, 255, 0, 0) 100%);
+  border-radius: 60%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0.9;
   z-index: 0;
   filter: blur(20px);
 }
 
-.fuego:nth-child(1){
-  animation:fuego 2s infinite;
+.fuego:nth-child(1) {
+  animation: fuego 2s infinite;
 }
 
-.fuego:nth-child(2){
-  animation:fuego 1.5s infinite;
+.fuego:nth-child(2) {
+  animation: fuego 1.5s infinite;
 
 }
 
-.fuego:nth-child(3){
-  animation:fuego 1s infinite;
+.fuego:nth-child(3) {
+  animation: fuego 1s infinite;
 }
 
-.fuego:nth-child(4){
-  animation:fuego 0.5s infinite;
+.fuego:nth-child(4) {
+  animation: fuego 0.5s infinite;
 }
 
-.fuego:nth-child(5){
-  animation:fuego 0.2s infinite;
+.fuego:nth-child(5) {
+  animation: fuego 0.2s infinite;
 }
 
 /* ============================================== Animation Fire
 */
-@keyframes fuego{
-  0%{
-    background:rgba(254,248,97,0.5);
-    transform:translateY(0) scale(1);
+@keyframes fuego {
+  0% {
+    background: rgba(254, 248, 97, 0.5);
+    transform: translateY(0) scale(1);
   }
-  50%{
-    background:rgba(255,50,0,0.1);
-    transform:translateY(-(@D/5)) scale(0);
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    transform: translateY(-(@D/5)) scale(0);
   }
-  100%{
-    background:rgba(254,248,97,0.5);
-    transform:translateY(0) scale(1);
+
+  100% {
+    background: rgba(254, 248, 97, 0.5);
+    transform: translateY(0) scale(1);
   }
 }
 
 /* ============================================== Frosting
 */
 
-.cobertura{
-  background:rgba(236,231,227,1);
-  border-radius:@D/2;
-  position:absolute;
-  top:60%; left:50%;
-  margin-left:-(@D/2)/1.8;
-  margin-top:-(@D/2)/10;
-  width:@D/1.8; height:@D/8;
-  z-index:10;
+.cobertura {
+  background: rgba(236, 231, 227, 1);
+  border-radius: @D/2;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-left: -(@D/2)/1.8;
+  margin-top: -(@D/2)/10;
+  width: @D/1.8;
+  height: @D/8;
+  z-index: 10;
 }
 
 .cobertura:after,
-.cobertura:before{
-  background:rgba(236,231,227,1);
-  border-radius:@D;
-  content:"";
-  position:absolute;
-  width:@D/20; height:@D/10;
+.cobertura:before {
+  background: rgba(236, 231, 227, 1);
+  border-radius: @D;
+  content: "";
+  position: absolute;
+  width: @D/20;
+  height: @D/10;
 }
 
-.cobertura:after{
-  top:@D/15; right:@D/7;
+.cobertura:after {
+  top: @D/15;
+  right: @D/7;
 }
 
-.cobertura:before{
-  top:@D/10; right:@D/11;
+.cobertura:before {
+  top: @D/10;
+  right: @D/11;
 }
 
 /* ============================================== BIZCOCHO
 */
 
-.bizcocho{
-  background:rgba(109,56,38,1);
-  position:absolute;
-  bottom:0; left:50%;
-  margin-left:-(@D/2)/2;
-  width:@D/2; height:@D/3;
+.bizcocho {
+  background: rgba(109, 56, 38, 1);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -(@D/2)/2;
+  width: @D/2;
+  height: @D/3;
 }
 
 .bizcocho:after,
-.bizcocho:before{
-  background:rgba(236,231,227,0.6);
-  content:"";
-  position:absolute;
-  width:100%; height:@D/20;
+.bizcocho:before {
+  background: rgba(236, 231, 227, 0.6);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: @D/20;
 }
 
-.bizcocho:after{
-  top:30%; left:0;
+.bizcocho:after {
+  top: 30%;
+  left: 0;
 }
 
-.bizcocho:before{
-  top:60%; left:0;
+.bizcocho:before {
+  top: 60%;
+  left: 0;
 }
 
 /* ============================================== TEXT
 */
 
 h1,
-p{
+p {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-style:italic;
-  text-align:center;
-  width:100%;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
   user-select: none;
 }
