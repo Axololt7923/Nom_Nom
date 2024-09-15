@@ -1,22 +1,40 @@
 body {
-	background-color: #120026;
-	transition:background-image linear  5s;
-	overflow-x:hidden;
-	z-index: 0;
+    background-color: #000; 
+    transition: background-color 1.5s ease-in-out;
+	background-image: none;
+    overflow-x: hidden;
+    z-index: 1;
+    position: relative;
 }
+
+.peach {
+    background-color: rgb(232, 230, 217);
+    transition: background-color 1.5s ease-in-out;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('123.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+    z-index: -1;
+}
+
+.peach::before {
+    opacity: 1;
+}
+
 .container {
 	display: none;
 }
-.peach {
-	position: fixed;
-	width: 100%;
-	background-image : url('123.jpg');
-	background-color :rgb(232, 230, 217);
-	background-size: cover;
-    background-repeat: no-repeat;
-	z-index:-1 ; 
-}
-
 .bulb {
 	width: 50px;
 	height: 50px;
@@ -257,17 +275,14 @@ audio {
 }
 
 .bannar {
-	max-width: 100%;
-	width: 300px;
 	transform:translate(0px,-500px);
-	z-index:9999;
-
+	z-index:2;
 }
 .bannar-after{
 	max-width: 100%;
 	width: 500px;
 	transform:translate(0px,-500px);
-	z-index: 3;
+	z-index: 2;
 }
 .bannar-come {
 	animation: bannar_come linear 6s;
@@ -292,12 +307,16 @@ audio {
 	}
 }
 
-.balloon-border{
-	position: fixed;
-	top:100%;
-	opacity: 0.9;
-	filter:drop-shadow(1.2) ;
-	z-index: 9999;
+.balloon-border {
+    position: fixed ;
+	margin: 0;
+	background-position:center 0px;
+    top: 100%;
+    width: 50% center;
+    height:50%;
+    opacity: 0.8;
+    z-index: 9999;
+	
 }
 .control-panel {
 	position: relative;
