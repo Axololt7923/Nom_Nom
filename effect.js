@@ -80,7 +80,7 @@ $('document').ready(function () {
 	$('#wish_message').click(function () {
 		// $('.overplay').fadeOut('slow');
 		// $('.light').fadeOut('slow');
-		$(this).fadeOut('slow').delay(3000).promise().done(function () {
+		$(this).fadeOut('slow').delay(5000).promise().done(function () {
 			$('#story').fadeIn('slow');
 		});
 	});
@@ -95,7 +95,7 @@ $('document').ready(function () {
 		function msgLoop(i) {
 			$("p:nth-child(" + i + ")").fadeOut('slow').delay(800).promise().done(function () {
 				i = i + 1;
-				$("p:nth-child(" + i + ")").fadeIn('slow').delay(1000);
+				$("p:nth-child(" + i + ")").fadeIn('slow').delay(5000);
 				if (i == 50) {
 					$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 						$('.cake').fadeIn('fast');
